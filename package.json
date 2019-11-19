@@ -1,0 +1,25 @@
+{
+  "name": "@hyperone/dns-probing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperonecom/h1-dns-probing.git"
+  },
+  "keywords": [
+    "dns-probing"
+  ],
+  "author": "Adam Dobrawy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyperonecom/h1-dns-probing/issues"
+  },
+  "homepage": "https://github.com/hyperonecom/h1-dns-probing#readme",
+  "devDependencies": {
+    "eslint": "^6.6.0"
+  }
+}
