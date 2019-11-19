@@ -1,11 +1,13 @@
-
+'use strict';
 const dns = require('./dns')();
+const records = require('./records');
 
-const dnsProbing = () => {
+const dnsProbing = async (zone) => {
     const rrset = [];
+    const q = [];
     for (const [rrtype, prefixes] of Object.entries(records)) {
         prefixes.map(async prefix => {
-            const name = `${prefix}${ctx.params.zone}`;
+            const name = `${prefix}${zone}`;
             try {
                 const response = await dns.query(name, rrtype);
                 if (response.record.length > 0) {
@@ -22,4 +24,4 @@ const dnsProbing = () => {
 
 module.exports = {
     dnsProbing,
-}
+};

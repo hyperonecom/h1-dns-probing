@@ -19,7 +19,7 @@ module.exports = (options = {}) => {
     });
 
     const directAnswers = (res) => res.answers
-        .filter(answer => 
+        .filter(answer =>
             answer.name === res.questions[0].name &&
             answer.type === res.questions[0].type
         );

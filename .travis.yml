@@ -9,3 +9,4 @@ jobs:
   - stage: build
     script:
     - npm ci
+    - npm lint
