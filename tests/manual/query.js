@@ -1,7 +1,7 @@
 /* eslint-disable comma-spacing */
 'use strict';
 
-const dns = require('./lib/dns');
+const dns = require('../../lib/dns');
 
 // Before using the following examples, verify current answers using "dig".
 const tests = [

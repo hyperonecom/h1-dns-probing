@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node tests",
+    "test": "ava ./tests/automated/*.js",
     "lint": "eslint ."
   },
   "repository": {
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/hyperonecom/h1-dns-probing#readme",
   "devDependencies": {
     "@hyperone/eslint-config": "^2.0.1",
+    "ava": "^2.4.0",
     "eslint": "^6.6.0"
   },
   "dependencies": {
