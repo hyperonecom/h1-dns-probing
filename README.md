@@ -13,7 +13,7 @@ A library that allows you to guess popular DNS records without using e.g. zone t
 
 ## Requirements
 
-* [node.js](http://nodejs.org/) - v12.0.0 or newer
+* [node.js](http://nodejs.org/) - v10 or newer
 
 ## Installation
 
