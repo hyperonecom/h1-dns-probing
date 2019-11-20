@@ -23,5 +23,8 @@
   "devDependencies": {
     "@hyperone/eslint-config": "^2.0.1",
     "eslint": "^6.6.0"
+  },
+  "dependencies": {
+    "dns-socket": "^4.2.0"
   }
 }
