@@ -1,18 +1,27 @@
+/* eslint-disable comma-spacing */
 'use strict';
 
-const dns = require('./dns')();
+const dns = require('./dns');
+
+// Before using the following examples, verify current answers using "dig".
+const tests = [
+    [ '_xmpp-server._tcp.gmail.com.' , 'SRV'   , ['8.8.8.8'] ],
+    [ 'pop.siecobywatelska.pl'       , 'A'     , ['8.8.8.8'] ],
+    [ 'pop.siecobywatelska.pl.'      , 'A'     , ['8.8.8.8'] ],
+    [ 'pop.siecobywatelska.pl.'      , 'CNAME' , ['8.8.8.8'] ],
+    [ 'pop.siecobywatelska.pl'       , 'CNAME' , ['8.8.8.8'] ],
+    [ 'google.com'                   , 'A'     , ['8.8.8.8'] ],
+];
 
 const main = async () => {
-    // Before using the following examples, verify current answers using "dig".
-    console.log(await dns.query('_xmpp-server._tcp.gmail.com.', 'SRV', ['8.8.8.8']));
-    console.log(await dns.query('pop.siecobywatelska.pl', 'A', ['8.8.8.8']));
-    console.log(await dns.query('pop.siecobywatelska.pl.', 'A', ['8.8.8.8']));
-    console.log(await dns.query('pop.siecobywatelska.pl.', 'CNAME', ['8.8.8.8']));
-    console.log(await dns.query('pop.siecobywatelska.pl', 'CNAME', ['8.8.8.8']));
-    console.log(await dns.query('google.com', '8.8.8.8'));
+    for (const test of tests) {
+        const socket = dns();
+        console.log(await socket.query(...test));
+        await socket.destroy();
+    }
 };
 
-main().then(console.log).catch(err => {
+main().catch(err => {
     console.log(err);
     console.log(err.stack);
     process.exit(1);
