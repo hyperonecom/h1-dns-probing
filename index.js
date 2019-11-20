@@ -1,7 +1,7 @@
 'use strict';
 
-const records = require('./records');
-const dns = require('./dns');
+const records = require('./lib/records');
+const dns = require('./lib/dns');
 
 const dnsProbing = async (zone) => {
     const socket = dns();
