@@ -22,7 +22,7 @@ A library that allows you to guess popular DNS records without using e.g. zone t
 ## Examples
 
 ```js
-var {dnsProbing} = require('@hyperone/dns-probing');
+const { dnsProbing } = require('@hyperone/dns-probing');
 
 const main = async () => {
   console.log(await dnsProbing('example.com'));
