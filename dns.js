@@ -1,4 +1,5 @@
 'use strict';
+
 const dnsSocket = require('dns-socket');
 
 module.exports = (options = {}) => {
@@ -73,5 +74,6 @@ module.exports = (options = {}) => {
 
     return {
         query,
+        destroy: () => new Promise(resolve => socket.destroy(resolve)),
     };
 };
