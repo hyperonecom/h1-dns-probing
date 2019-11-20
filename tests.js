@@ -22,7 +22,7 @@ const main = async () => {
 };
 
 main().catch(err => {
-    console.log(err);
-    console.log(err.stack);
+    console.error(err);
+    console.error(err.stack);
     process.exit(1);
 });
