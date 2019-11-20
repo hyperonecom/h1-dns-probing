@@ -11,7 +11,7 @@ const dnsProbing = async (zone) => {
         prefixes.map(async prefix => {
             const name = `${prefix}${zone}`;
             try {
-                const response = await dns.query(name, rrtype);
+                const response = await socket.query(name, rrtype);
                 if (response.record.length > 0) {
                     rrset.push(response);
                 }
