@@ -1,8 +1,10 @@
 'use strict';
-const dns = require('./dns')();
+
 const records = require('./records');
+const dns = require('./dns');
 
 const dnsProbing = async (zone) => {
+    const socket = dns();
     const rrset = [];
     const q = [];
     for (const [rrtype, prefixes] of Object.entries(records)) {
@@ -19,6 +21,7 @@ const dnsProbing = async (zone) => {
         }).map(x => q.push(x));
     }
     await Promise.all(q);
+    await socket.destroy();
     return rrset;
 };
 
